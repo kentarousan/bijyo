@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>女優図鑑</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+$(window).load(function() {
+	console.log("test");
+	$.ajax({
+		type: "GET",
+		url: "http://bjin.me/api/?type=rand&count=10&format=xml",
+		dataType: "xml",
+		success: function(xml) {
+			alert("読み込み成功");
+			console.log(xml);
+			readXML(xml);
+		},
+		error: function(xml) {
+			alert("読み込み失敗");
+		} 
+	});
+});
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+function readXML(xml) {
+	$(xml).find("item").each(function() {
+		$("#result").append("<h2>" + $(this).find("category").text() + "</h2>");
+		$("#result").append("<img src='" + $(this).find("thumb").text() + "' alt='女優'></br>");
+		$("#result").append("<hr>");
+
+	});
+}
+</script>
+
+<h1>女優図鑑</h1>
+<div id="result"></div>
+</body>
+</html>
