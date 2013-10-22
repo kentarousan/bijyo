@@ -5,24 +5,7 @@
 <title>女優図鑑</title>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script>
-$(window).load(function() {
-	console.log("test");
-	$.ajax({
-		type: "GET",
-		url: "http://bjin.me/api/?type=rand&count=10&format=xml",
-		dataType: "xml",
-		success: function(xml) {
-			alert("読み込み成功");
-			console.log(xml);
-			readXML(xml);
-		},
-		error: function(xml) {
-			alert("読み込み失敗");
-		} 
-	});
-});
-</script>
+<script src="bijin.js"></script>
 </head>
 <body>
 
@@ -39,5 +22,6 @@ function readXML(xml) {
 
 <h1>女優図鑑</h1>
 <div id="result"></div>
+<a id="pageTop" href="#contents">ページトップへ</a>
 </body>
 </html>
