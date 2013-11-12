@@ -1,0 +1,28 @@
+div.actress {
+	border: 1px dashed #0000cc;
+	background-color: #eeeeff;
+	width: 160px;
+	float: left;
+	margin: 5px;
+}
+
+div.searchName {
+	color: #DF769C;
+	font-family: 'Lobster',cursive;
+	font-size: 24px;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4), 0 1px #FFFFFF;
+}
+
+p.image, p.caption {
+	text-align: center;
+	margin: 5px;
+}
+
+p.caption {
+	font-size: 80%;
+	color: darkblue;
+}
+
+p.exp {
+	clear: left;
+}

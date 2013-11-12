@@ -3,25 +3,22 @@
 <head>
 <meta charset="utf-8">
 <title>女優図鑑</title>
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="bijin.js"></script>
+<link rel="stylesheet" href="bijin.css" type="text/css">
+<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
-
-<script type="text/javascript">
-function readXML(xml) {
-	$(xml).find("item").each(function() {
-		$("#result").append("<h2>" + $(this).find("category").text() + "</h2>");
-		$("#result").append("<img src='" + $(this).find("thumb").text() + "' alt='女優'></br>");
-		$("#result").append("<hr>");
-
-	});
-}
-</script>
-
-<h1>女優図鑑</h1>
-<div id="result"></div>
-<a id="pageTop" href="#contents">ページトップへ</a>
+	<h1>女優図鑑</h1>
+	<h2>検索はこちら</h2>
+	<form name="F1" action="#" onsubmit="return false;">
+		<input type="text" name="T1" style="width:20em;height:2em">
+		<input type="button" value="検索" onclick="search()">
+	</form>
+	<div id="searchAns" class="searchAns"></div>
+	<div id="result" class="result"></div>
+	<p class="exp">
+		<a id="pageTop" href="#contents">ページトップへ</a>
+	</p>
 </body>
 </html>
