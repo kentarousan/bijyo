@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	var target = location.search.substring(11);
 	var str = "";
-	$.getJSON("http://bjin.me/api/?type=detail&count=20&format=JSON&id" + parseInt(target), function(json){
+	$.getJSON("http://bjin.me/api/?type=detail&count=20&format=JSON&id=" + parseInt(target), function(json){
 		str = "<h1 align='center'>" + json[0].category + "</h><br><br><br>";
 		for(var i in json){
 			str += "<div id='actress' class='actress'>";
