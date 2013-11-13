@@ -15,7 +15,7 @@ $(document).ready(function () {
 function search(){
 	delete_search("searchAns");
 	var str = "";
-	$.getJSON("http://bjin.me/api/?type=search&count=10&format=JSON&query" + document.F1.T1.value, function(json){
+	$.getJSON("http://bjin.me/api/?type=search&count=10&format=JSON&query=" + document.F1.T1.value, function(json){
 		str = "<div style='padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;'>";
 		str += "<div id='searchName' class='searchName'>";
 		str += "検索結果:";
@@ -29,7 +29,7 @@ function search(){
 		$("#searchAns").append(str);
 	}).fail(function() {
 		str = "<div style='padding: 10px; margin-bottom: 10px; border: 1px dotted #333333;'>";
-		str += "<div id='searchName' class='searchName'>見つかりませんでした</div>"
+		str += "<div id='searchName' class='searchName'>見つかりませんでした</div>";
 		str += "</div>";
 		$("#searchAns").append(str);
 	});
